@@ -23,8 +23,8 @@
 
 <style scoped>
   #app {
-    background-image: url('assets/bg1.jpg');
-    background-size: 100% 100%;
+    background-image: url('assets/shouye/u1.jpg');
+    background-size: 100%;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -35,5 +35,10 @@
   .el-main {
     color: #333;
     text-align: center;
+  }
+
+  .el-header{
+    padding: 0 0 0 0;
+    background-color: black;
   }
 </style>

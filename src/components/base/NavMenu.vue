@@ -5,19 +5,24 @@
                 class="el-menu-demo"
                 mode="horizontal"
                 @select="handleSelect"
+                background-color="#000"
+                text-color="#fff"
+                active-text-color="#ffd04b"
                 router
         >
-            <img src="../../assets/logo.png">
+            <div class="nick-name">笑小枫</div>
             <template v-for="item in navMenuData">
-                <el-menu-item :index="item.index" v-if="!item.child">{{item.name}}</el-menu-item>
+                <el-menu-item :index="item.index" v-if="!item.child" :key="item.index">{{item.name}}</el-menu-item>
 
-                <el-submenu :index="item.index" v-if="item.child">
+                <el-submenu :index="item.index" v-if="item.child" :key="item.index">
                     <template slot="title">{{item.name}}</template>
                     <template v-for="item2 in item.child">
-                        <el-menu-item :index="item2.index">{{item2.name}}</el-menu-item>
+                        <el-menu-item :index="item2.index" :key="item2.index">{{item2.name}}</el-menu-item>
                     </template>
                 </el-submenu>
             </template>
+            
+            
         </el-menu>
     </div>
 </template>
@@ -56,16 +61,22 @@
 </script>
 
 <style scoped>
-    #NavMenu{
-        margin: 0 auto;
-        max-width: 1200px;
-    }
-    .el-menu{
-        background-color: transparent !important;
-    }
     img{
         float:left;
         max-height: 55px;
-        margin-right: 30px;
+    }
+
+    .el-menu.el-menu--horizontal{
+        border-bottom: solid 1px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    .nick-name{
+        float:left;
+        align-items:center;
+        max-height: 55px;
+        margin-left: 15%;
+        color: #fff;
     }
 </style>
