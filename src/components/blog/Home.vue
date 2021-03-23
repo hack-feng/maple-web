@@ -36,7 +36,6 @@
 
     .page {
       height: 100vh;
-      width: 100vw;
       background-size: 100%;
     }
     .one{
