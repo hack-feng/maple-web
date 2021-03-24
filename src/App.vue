@@ -29,11 +29,12 @@
 
   .el-main {
     padding: 0;
+    margin-top: -60px;
   }
 
   .el-header{
     padding: 0 0 0 0;
-    background-color: black;
+    background-color: #00000078;
     position: sticky;
     position: -webkit-sticky;
     top: 0;

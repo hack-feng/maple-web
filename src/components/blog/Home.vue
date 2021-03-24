@@ -36,7 +36,8 @@
 
     .page {
       height: 100vh;
-      background-size: 100%;
+      background-color: #000;
+      background-size: 102%;
     }
     .one{
       background-image: url('../../assets/shouye/b1.jpg');
@@ -56,10 +57,10 @@
       background-repeat:no-repeat;
       /* 固定背景图片位置 */
       background-attachment:fixed;
-      background-image: url('../../assets/shouye/b4.jpg');
+      background-image: url('../../assets/shouye/b5.jpg');
     }
     .five{
-      background-image: url('../../assets/shouye/b5.jpg');
+      background-image: url('../../assets/shouye/b4.jpg');
     }
     .six{
       /* 让图片不重覆排列 */

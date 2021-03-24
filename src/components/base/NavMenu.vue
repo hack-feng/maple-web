@@ -9,7 +9,7 @@
       class="el-menu-demo"
       mode="horizontal"
       @select="handleSelect"
-      background-color="#000"
+      background-color="rgb(255 255 255 / 0%)"
       text-color="#fff"
       active-text-color="#ffd04b"
       router>
@@ -81,10 +81,10 @@
     font-size: 35px;
     font-family: cursive;
     font-weight: bold;
-    color: #fff;
+    color: #fed99c;
   }
   .desc{
-    color: #fff;
+    color: #d2ef90;
     font-family: cursive;
     font-weight: bold;
     margin-left: 20px;
