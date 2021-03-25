@@ -30,6 +30,7 @@
   .el-main {
     background-color: #f4f5f5;
     padding: 0;
+    height: calc(100vh - 60px);
   }
 
   .el-header{

@@ -27,7 +27,7 @@
     export default {
         data () {
             return {
-                count: 10,
+                count: 1000,
                 loading: false,
                 activeName: 'all',
                 tabList:[
@@ -64,14 +64,14 @@
     background-color: #f4f5f5;
     max-width: 1366px;
     width: 100%;
-    padding: 0 68px;
+    padding: 0 20px;
     min-height: 700px;
     margin: 16px auto 0;
     display: flex;
   }
   .left{
     background-color: #fff;
-    width: 300px;
+    width: 360px;
     margin-right: 16px;
   }
   .right{
@@ -86,7 +86,6 @@
   .article-list{
     margin-bottom: 15px;
     background-color: #fff;
-    height: 200px;
   }
 </style>
 
