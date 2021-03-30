@@ -1,22 +1,21 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header>
-        <NavMenu></NavMenu>
-      </el-header>
-      <el-main>
-        <router-view></router-view> <!--路由出口 -->
-      </el-main>
+      <Front v-if="!$route.meta.systemFlag && !$route.meta.isLoginPage"></Front>
+      <Manage v-if="$route.meta.systemFlag && !$route.meta.isLoginPage"></Manage>
+      <Login v-if="!$route.meta.systemFlag && $route.meta.isLoginPage"></Login>
     </el-container>
   </div>
 </template>
 
 <script>
-  import NavMenu from "./components/base/NavMenu.vue";
+  import Front from "./components/blog/Front.vue";
+  import Manage from "./components/manage/Manage.vue";
+  import Login from "./components/manage/Login";
   export default {
     name: 'App',
     components: {
-      NavMenu
+      Front, Manage, Login
     }
   }
 </script>
@@ -25,18 +24,5 @@
   #app {
     display:flex;
     flex-direction:column;
-  }
-
-  .el-main {
-    padding: 0;
-    margin-top: -60px;
-  }
-
-  .el-header{
-    padding: 0 0 0 0;
-    background-color: #00000078;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
   }
 </style>
