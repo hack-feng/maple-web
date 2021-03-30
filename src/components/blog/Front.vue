@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-header v-if="!$route.meta.showNavMenu">
+    <el-header>
       <NavMenu></NavMenu>
     </el-header>
     <el-main>

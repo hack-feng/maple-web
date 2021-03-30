@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/blog/Home'
 import Article from '@/components/blog/Article'
-import Login from '@/components/manage/login'
+import Login from '@/components/manage/Login'
 import Manage from '@/components/manage/Manage'
 
 Vue.use(Router)
@@ -26,7 +26,7 @@ export default new Router({
       name: 'Login',
       component: Login,
       meta: {
-        showNavMenu: true
+        isLoginPage: true
       }
     },{
       path: '/Manage',
