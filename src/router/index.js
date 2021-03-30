@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/blog/Home'
 import Article from '@/components/blog/Article'
-import Foo from '@/components/Foo'
-import Bar from '@/components/Bar'
+import Login from '@/components/manage/login'
+import Manage from '@/components/manage/Manage'
 
 Vue.use(Router)
 
@@ -13,24 +12,29 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
     },{
-          path: '/home',
-          name: 'Home',
-          component: Home
+      path: '/home',
+      name: 'Home',
+      component: Home,
     },{
       path: '/article',
       name: 'Article',
-      component: Article
-    }, {
-      path: '/foo',
-      name: 'Foo',
-      component: Foo
-    },
-    {
-      path: '/bar',
-      name: 'Bar',
-      component: Bar
+      component: Article,
+    },{
+      path: '/login',
+      name: 'Login',
+      component: Login,
+      meta: {
+        showNavMenu: true
+      }
+    },{
+      path: '/Manage',
+      name: 'Manage',
+      component: Manage,
+      meta: {
+        systemFlag: true
+      }
     }
   ]
 })

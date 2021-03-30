@@ -1,22 +1,19 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header>
-        <NavMenu></NavMenu>
-      </el-header>
-      <el-main>
-        <router-view></router-view> <!--路由出口 -->
-      </el-main>
+      <Front v-if="!$route.meta.systemFlag"></Front>
+      <Manage v-if="$route.meta.systemFlag"></Manage>
     </el-container>
   </div>
 </template>
 
 <script>
-  import NavMenu from "./components/base/NavMenu.vue";
+  import Front from "./components/blog/Front.vue";
+  import Manage from "./components/manage/Manage.vue";
   export default {
     name: 'App',
     components: {
-      NavMenu
+      Front, Manage
     }
   }
 </script>
@@ -25,20 +22,5 @@
   #app {
     display:flex;
     flex-direction:column;
-  }
-
-  .el-main {
-    background-color: #f4f5f5;
-    padding: 0;
-    height: calc(100vh - 60px);
-  }
-
-  .el-header{
-    padding: 0 0 0 0;
-    background-color: black;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    z-index: 100;
   }
 </style>
