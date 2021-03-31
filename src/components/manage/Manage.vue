@@ -1,11 +1,11 @@
 <template>
   <el-container>
     <el-header class="flex">
-        <div>
+      <div>
           <span class="systemName">
             管理后台
           </span>
-        </div>
+      </div>
     </el-header>
     <el-container>
       <el-aside width="200px">Aside</el-aside>
@@ -15,13 +15,14 @@
 </template>
 
 <script>
-    import NavMenu from "./base/NavMenu.vue";
-    export default {
-        name: "Manage",
-        components: {
-          NavMenu
-        }
+  import NavMenu from "./base/NavMenu.vue";
+
+  export default {
+    name: "Manage",
+    components: {
+      NavMenu
     }
+  }
 </script>
 
 <style scoped>
@@ -31,7 +32,7 @@
     height: calc(100vh - 60px);
   }
 
-  .el-header{
+  .el-header {
     padding: 0 0 0 0;
     background-color: black;
     position: sticky;
@@ -39,12 +40,14 @@
     top: 0;
     z-index: 100;
   }
-  .flex{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .systemName{
+
+  .systemName {
     color: #fff;
     font-size: 25px;
   }

@@ -9,7 +9,7 @@
       class="el-menu-demo"
       mode="horizontal"
       @select="handleSelect"
-      background-color="rgb(255 255 255 / 0%)"
+      background-color="#000"
       text-color="#fff"
       active-text-color="#ffd04b"
       router>
@@ -34,15 +34,15 @@
       return {
         activeIndex: "home",
         navMenuData: [
-          { index: "home", name: "首页" },
-          { index: "article", name: "文章管理" },
-          { index: "novel", name: "小说" },
+          {index: "home", name: "首页"},
+          {index: "article", name: "文章管理"},
+          {index: "novel", name: "小说"},
           {
             index: "2",
             name: "我的工作台",
-            child: [{ index: "2-1", name: "选项1" },{ index: "2-2", name: "选项2" },{ index: "2-3", name: "选项3" }]
+            child: [{index: "2-1", name: "选项1"}, {index: "2-2", name: "选项2"}, {index: "2-3", name: "选项3"}]
           },
-          { index: "login", name: "控制台" },
+          {index: "login", name: "控制台"},
         ]
       };
     },
@@ -51,40 +51,44 @@
         console.log(key, keyPath);
       }
     },
-    mounted(){
+    mounted() {
       console.log(this.activeIndex)
       console.log(this.$route.path)
-      this.activeIndex = this.$route.path.substring(1,this.$route.path.length);
+      this.activeIndex = this.$route.path.substring(1, this.$route.path.length);
 
     }
   };
 </script>
 
 <style scoped>
-  #NavMenu{
+  #NavMenu {
     padding: 0 18%;
   }
-  .flex{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  img{
-    float:left;
+
+  img {
+    float: left;
     max-height: 55px;
   }
 
-  .el-menu.el-menu--horizontal{
+  .el-menu.el-menu--horizontal {
     border-bottom: solid 0;
   }
-  .nick-name{
+
+  .nick-name {
     font-size: 35px;
     font-family: cursive;
     font-weight: bold;
-    color: #fed99c;
+    color: #fff;
   }
-  .desc{
-    color: #d2ef90;
+
+  .desc {
+    color: #fff;
     font-family: cursive;
     font-weight: bold;
     margin-left: 20px;

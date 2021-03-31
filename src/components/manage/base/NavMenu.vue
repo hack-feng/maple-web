@@ -34,9 +34,9 @@
       return {
         activeIndex: "home",
         navMenuData: [
-          { index: "home", name: "首页" },
-          { index: "article", name: "文章管理" },
-          { index: "novel", name: "小说" }
+          {index: "home", name: "首页"},
+          {index: "article", name: "文章管理"},
+          {index: "novel", name: "小说"}
         ]
       };
     },
@@ -45,39 +45,43 @@
         console.log(key, keyPath);
       }
     },
-    mounted(){
+    mounted() {
       console.log(this.activeIndex)
       console.log(this.$route.path)
-      this.activeIndex = this.$route.path.substring(1,this.$route.path.length);
+      this.activeIndex = this.$route.path.substring(1, this.$route.path.length);
 
     }
   };
 </script>
 
 <style scoped>
-  #NavMenu{
+  #NavMenu {
     padding: 0 18%;
   }
-  .flex{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  img{
-    float:left;
+
+  img {
+    float: left;
     max-height: 55px;
   }
 
-  .el-menu.el-menu--horizontal{
+  .el-menu.el-menu--horizontal {
     border-bottom: solid 0;
   }
-  .nick-name{
+
+  .nick-name {
     font-size: 35px;
     font-family: cursive;
     font-weight: bold;
     color: #fff;
   }
-  .desc{
+
+  .desc {
     color: #fff;
     font-family: cursive;
     font-weight: bold;

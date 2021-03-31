@@ -12,6 +12,7 @@
   import Front from "./components/blog/Front.vue";
   import Manage from "./components/manage/Manage.vue";
   import Login from "./components/manage/Login";
+
   export default {
     name: 'App',
     components: {
@@ -22,7 +23,7 @@
 
 <style scoped>
   #app {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
   }
 </style>

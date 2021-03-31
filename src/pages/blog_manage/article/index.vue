@@ -24,43 +24,43 @@
 </template>
 
 <script>
-    export default {
-        data () {
-            return {
-                count: 1000,
-                loading: false,
-                activeName: 'all',
-                tabList:[
-                  { id: "1", label: "全部", name: "all" },
-                  { id: "2", label: "最近", name: "now" },
-                  { id: "3", label: "测试", name: "test" }
-                ]
-            }
-        },
-        computed: {
-            noMore () {
-                return this.count >= 20
-            },
-            disabled () {
-                return this.loading || this.noMore
-            }
-        },
-        methods: {
-            load () {
-                this.loading = true
-                setTimeout(() => {
-                    this.count += 2
-                this.loading = false
-                }, 2000)
-            },
-            handleClick(tab, event) {
-            }
-        }
+  export default {
+    data() {
+      return {
+        count: 1000,
+        loading: false,
+        activeName: 'all',
+        tabList: [
+          {id: "1", label: "全部", name: "all"},
+          {id: "2", label: "最近", name: "now"},
+          {id: "3", label: "测试", name: "test"}
+        ]
+      }
+    },
+    computed: {
+      noMore() {
+        return this.count >= 20
+      },
+      disabled() {
+        return this.loading || this.noMore
+      }
+    },
+    methods: {
+      load() {
+        this.loading = true
+        setTimeout(() => {
+          this.count += 2
+          this.loading = false
+        }, 2000)
+      },
+      handleClick(tab, event) {
+      }
     }
+  }
 </script>
 
 <style>
-  .article-content{
+  .article-content {
     background-color: #f4f5f5;
     max-width: 1366px;
     width: 100%;
@@ -69,21 +69,23 @@
     margin: 16px auto 0;
     display: flex;
   }
-  .left{
+
+  .left {
     background-color: #fff;
     width: 360px;
     margin-right: 16px;
   }
-  .right{
+
+  .right {
     width: 1000px;
   }
 
-  .article-title{
+  .article-title {
     background-color: #fff;
     height: 40px;
   }
 
-  .article-list{
+  .article-list {
     margin-bottom: 15px;
     background-color: #fff;
   }
