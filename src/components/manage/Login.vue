@@ -23,64 +23,65 @@
 </template>
 
 <script>
-    export default {
-        name: "Login",
+  export default {
+    name: "Login",
 
-        data() {
-          return {
-            loginForm: {
-              userName: "",
-              passWord: ""
-            },
-            loginRules: {
-              userName: [
-                {required: true, message: '请输入用户名称', trigger: 'blur'},
-                {min: 3, max: 15, message: '长度在 3 到 15 个字符', trigger: 'blur'}
-              ],
-              passWord: [
-                {required: true, message: '请输入用户密码', trigger: 'blur'},
-                {min: 3, max: 15, message: '长度在 3 到 15 个字符', trigger: 'blur'}
-              ]
-            }
-          }
+    data() {
+      return {
+        loginForm: {
+          userName: "",
+          passWord: ""
         },
-        methods:{
-          submitForm(formName) {
-            this.$refs[formName].validate((valid) => {
-              if (valid) {
-                var data = JSON.parse(JSON.stringify(this.loginForm));
-                this.api.post("/login/auth", data).then((response)=>{
-                  if(response.code === 200){
-                    this.$router.replace("/Manage");
-                  }else{
-                    this.$message({
-                      message:response.msg,
-                      type:"warning"
-                    })
-                  }
-                })
-              } else {
-                console.log('error submit!!');
-                return false;
-              }
-            });
-          },
-          resetForm(formName) {
-            this.$refs[formName].resetFields();
-          }
+        loginRules: {
+          userName: [
+            {required: true, message: '请输入用户名称', trigger: 'blur'},
+            {min: 3, max: 15, message: '长度在 3 到 15 个字符', trigger: 'blur'}
+          ],
+          passWord: [
+            {required: true, message: '请输入用户密码', trigger: 'blur'},
+            {min: 3, max: 15, message: '长度在 3 到 15 个字符', trigger: 'blur'}
+          ]
         }
+      }
+    },
+    methods: {
+      submitForm(formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            var data = JSON.parse(JSON.stringify(this.loginForm));
+            this.api.post("/login/auth", data).then((response) => {
+              if (response.code === 200) {
+                this.$router.replace("/Manage");
+              } else {
+                this.$message({
+                  message: response.msg,
+                  type: "warning"
+                })
+              }
+            })
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+      },
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
+      }
     }
+  }
 </script>
 
 <style scoped>
-  .container{
+  .container {
     background-image: url("./../../assets/bg1.jpg");
     background-size: 100%;
     width: 100vw;
     height: 100vh;
     position: relative;
   }
-  .main{
+
+  .main {
     width: 450px;
     height: 300px;
     position: absolute;

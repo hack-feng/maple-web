@@ -1,8 +1,8 @@
 import axios from "axios";
-import { Message} from "element-ui";
-import { getToken } from "@/utils/auth";
+import {Message} from "element-ui";
+import {getToken} from "@/utils/auth";
 import router from "../router/index";
-import { set } from "js-cookie";
+import {set} from "js-cookie";
 
 // 创建axios实例
 const service = axios.create({
@@ -28,7 +28,7 @@ service.interceptors.request.use(
       }
     }
     if (auth && !config.headers.Authorization) {
-      Message( {
+      Message({
         showClose: true,
         message: "跳转登录页面",
         type: "error",
@@ -48,11 +48,10 @@ service.interceptors.request.use(
 );
 // respone拦截器
 service.interceptors.response.use(
-
   response => {
     const res = response.data;
     if (res.code === 200) {
-      store.state.messageNotification=res.frontNoticeNum;//前台小红点
+      store.state.messageNotification = res.frontNoticeNum;//前台小红点
       store.state.noticeNum = res.noticeNum;  // 保存小红点
     }
     if (!res.code) {
@@ -75,7 +74,7 @@ service.interceptors.response.use(
     }
   },
   error => {
-    if(error.response.status !== 404){
+    if (error.response.status !== 404) {
       Message({
         message: error.message,
         type: "error",

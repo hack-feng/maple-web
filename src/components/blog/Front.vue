@@ -10,13 +10,14 @@
 </template>
 
 <script>
-    import NavMenu from "./base/NavMenu.vue";
-    export default {
-        name: "Front",
-        components: {
-          NavMenu
-        }
+  import NavMenu from "./base/NavMenu.vue";
+
+  export default {
+    name: "Front",
+    components: {
+      NavMenu
     }
+  }
 </script>
 
 <style scoped>
@@ -26,7 +27,7 @@
     height: calc(100vh - 60px);
   }
 
-  .el-header{
+  .el-header {
     padding: 0 0 0 0;
     background-color: black;
     position: sticky;

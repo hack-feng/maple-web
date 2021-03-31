@@ -8,7 +8,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-import { default as api } from './utils/api'
+import {default as api} from './utils/api'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
@@ -19,6 +19,6 @@ Vue.prototype.api = api;
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {App},
   template: '<App/>'
 })
