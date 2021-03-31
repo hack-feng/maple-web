@@ -39,33 +39,33 @@
       background-size: 100%;
     }
     .one{
-      background-image: url('../../assets/shouye/b1.jpg');
+      background-image: url('../../../assets/shouye/b1.jpg');
     }
     .two{
       /* 让图片不重覆排列 */
       background-repeat:no-repeat;
       /* 固定背景图片位置 */
       background-attachment:fixed;
-      background-image: url('../../assets/shouye/b2.jpg');
+      background-image: url('../../../assets/shouye/b2.jpg');
     }
     .three{
-      background-image: url('../../assets/shouye/b3.jpg');
+      background-image: url('../../../assets/shouye/b3.jpg');
     }
     .four{
       /* 让图片不重覆排列 */
       background-repeat:no-repeat;
       /* 固定背景图片位置 */
       background-attachment:fixed;
-      background-image: url('../../assets/shouye/b4.jpg');
+      background-image: url('../../../assets/shouye/b4.jpg');
     }
     .five{
-      background-image: url('../../assets/shouye/b5.jpg');
+      background-image: url('../../../assets/shouye/b5.jpg');
     }
     .six{
       /* 让图片不重覆排列 */
       background-repeat:no-repeat;
       /* 固定背景图片位置 */
       background-attachment:fixed;
-      background-image: url('../../assets/shouye/b6.jpg');
+      background-image: url('../../../assets/shouye/b6.jpg');
     }
 </style>
