@@ -13,7 +13,7 @@ module.exports = {
       '/api': {
         //栗梧桐
         // target: 'http://192.168.2.132:8077',
-        target: 'http://192.168.2.195:8077',
+        target: 'http://127.0.0.1:6666',
         pathRewrite: {
           '^/api': '/'
         }
