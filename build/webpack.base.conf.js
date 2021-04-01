@@ -4,6 +4,8 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
+let webpack = require('webpack')
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -29,6 +31,13 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+  plugins: [
+    //提供全局的变量，在模块中使用无需用require引入
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'md5': 'md5'
+    }),
+  ],
   module: {
     rules: [
       {

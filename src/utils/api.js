@@ -50,10 +50,6 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     const res = response.data;
-    if (res.code === 200) {
-      store.state.messageNotification = res.frontNoticeNum;//前台小红点
-      store.state.noticeNum = res.noticeNum;  // 保存小红点
-    }
     if (!res.code) {
       return res;
     }

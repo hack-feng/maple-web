@@ -8,8 +8,12 @@
       </div>
     </el-header>
     <el-container>
-      <el-aside width="200px">Aside</el-aside>
-      <el-main>Main</el-main>
+      <el-aside width="200px">
+        <NavMenu></NavMenu>
+      </el-aside>
+      <el-main>
+        <router-view></router-view> <!--路由出口 -->
+      </el-main>
     </el-container>
   </el-container>
 </template>

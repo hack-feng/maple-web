@@ -4,6 +4,7 @@ import Home from '@/pages/blog_manage/home/index'
 import Article from '@/pages/blog_manage/article/index'
 import Login from '@/components/manage/Login'
 import Manage from '@/components/manage/Manage'
+import User from '@/components/manage/user/index'
 
 Vue.use(Router)
 
@@ -29,9 +30,16 @@ export default new Router({
         isLoginPage: true
       }
     }, {
-      path: '/Manage',
+      path: '/manage',
       name: 'Manage',
       component: Manage,
+      meta: {
+        systemFlag: true
+      }
+    }, {
+      path: '/user',
+      name: 'User',
+      component: User,
       meta: {
         systemFlag: true
       }
