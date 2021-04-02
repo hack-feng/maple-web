@@ -4,7 +4,7 @@ import Home from '@/pages/blog_manage/home/index'
 import Article from '@/pages/blog_manage/article/index'
 import Login from '@/components/manage/Login'
 import Manage from '@/components/manage/Manage'
-import User from '@/components/manage/user/index'
+import User from '@/pages/system_manage/user/index'
 
 Vue.use(Router)
 
