@@ -26,6 +26,7 @@
     components: {
       NavMenu
     }
+
   }
 </script>
 
