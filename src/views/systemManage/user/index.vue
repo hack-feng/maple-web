@@ -1,17 +1,16 @@
 <template>
   <div>
-    <TableArea
+    <UserTable
       ref="TableArea"
       @getTableList="getTableList">
-    </TableArea>
+    </UserTable>
   </div>
 </template>
 
 <script>
-import DialogArea from "./dialogArea";
-import OperatorArea from "./operatorArea";
-import SearchArea from "./searchArea";
-import TableArea from "./tableArea";
+import UserEdit from "./components/UserEdit";
+import UserSearch from "./components/UserSearch";
+import UserTable from "./components/UserTable";
 import { mapState } from "vuex";
 // import Pagination from "../../../components/manage/Pagination/test1"
 
@@ -24,11 +23,10 @@ export default {
     })
   },
   components: {
-    DialogArea, OperatorArea, SearchArea, TableArea
+    UserEdit, UserSearch, UserTable
   },
   created(){ this.getTableList(); },
   methods: {
-    // 获取角色列表
     getTableList(current) {
       if (current) this.rootState.current = current;
       this.api.post("/user/getList?current=" + this.rootState.current + "&size=" + this.rootState.size, this.userState.searchForm).then((res) => {

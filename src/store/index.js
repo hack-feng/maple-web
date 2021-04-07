@@ -4,7 +4,7 @@
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
-import User from './modules/system_manage/user/index'
+import User from './modules/systemManage/user'
 import actions from "./actions"
 import getters from './getters'
 Vue.use(Vuex)
