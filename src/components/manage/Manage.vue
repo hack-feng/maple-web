@@ -11,7 +11,7 @@
       <el-aside width="200px">
         <NavMenu></NavMenu>
       </el-aside>
-      <el-main>
+      <el-main class="main">
         <router-view></router-view> <!--路由出口 -->
       </el-main>
     </el-container>
@@ -43,6 +43,9 @@
     position: -webkit-sticky;
     top: 0;
     z-index: 100;
+  }
+  .main{
+    padding: 20px 20px 20px 20px;
   }
 
   .flex {

@@ -63,7 +63,7 @@
                   isVisibleLocation: response.data.isVisibleLocation //判断经销商用户是否有权限查看 经销商产品列表
                 };
                 sessionStorage.setItem("userInfo", JSON.stringify(this.State.userInfo));  // 保存用户信息
-                this.$router.replace("/manage");
+                this.$router.replace("/user");
               } else {
                 this.$message({
                   message: response.msg,
