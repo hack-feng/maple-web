@@ -38,6 +38,17 @@
         <span v-else>正常</span>
       </template>
     </el-table-column>
+    <el-table-column label="操作" fixed="right" align="center" width="130">
+      <template slot="header">
+        <span class="headerTitle">操作</span>
+      </template>
+      <template slot-scope="scope">
+        <div style="display: flex;justify-content: space-around">
+          <span @click="updateEvent(scope.row)">编辑</span>
+          <span @click="$emit('deleteEvent', [scope.row.id])">删除</span>
+        </div>
+      </template>
+    </el-table-column>
   </el-table>
 </template>
 
@@ -53,6 +64,13 @@ export default {
   data() {
     return {
     }
+  },
+  methods: {
+    updateEvent(data) {
+      this.userState.dialogType = "修改";
+      this.userState.dialogShow = true;
+      this.userState.dialogData = this.plugins.deepFullCopy(data);
+    },
   }
 }
 </script>
