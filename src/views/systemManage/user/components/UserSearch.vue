@@ -1,23 +1,41 @@
 <template>
-  <div class="listTemplateSearch">
-    <el-form ref="roleForm" :inline="true" size="small" :model="userState.searchForm" label-width="80px">
-      <el-row>
-        <el-col :span="24">
-          <el-form-item label="用户名称">
-            <el-input v-model.trim="userState.searchForm.name" clearable :placeholder="this.userState.activeName == '1'?'请输入甲方用户名称':'请输入经销商用户名称'"></el-input>
-          </el-form-item>
-        </el-col>
-      </el-row>
-    </el-form>
+  <div>
+    <div class="listTemplateSearch">
+      <el-form ref="userForm" :inline="true" size="small" :model="userState.searchForm" label-width="80px">
+        <el-row>
+          <el-col :span="24">
+            <el-form-item label="用户名称">
+              <el-input v-model.trim="userState.searchForm.account" clearable></el-input>
+            </el-form-item>
+          </el-col>
+        </el-row>
+      </el-form>
+    </div>
+    <div class="listTemplateOperator">
+      <el-button type="primary" size="small" @click="$emit('getTableList', 1)">查询</el-button>
+      <el-button type="primary" size="small" @click="resetSearchForm">重置</el-button>
+      <el-button type="primary" size="small" @click="addEvent">新增</el-button>
+    </div>
   </div>
 </template>
 
 <script>
-  import { mapState, mapGetters } from 'vuex';
+  import { mapState} from 'vuex';
   export default {
     computed:{
       ...mapState({ userState: state=>state.User })
     },
+    methods: {
+      addEvent(){
+        this.userState.dialogType = 'add';
+        this.userState.dialogShow = true;
+        this.plugins.resetObjectValue(this.userState.dialogData);
+      },
+      resetSearchForm(){
+        this.userState.searchForm.name = "";
+        this.$emit('getTableList', 1)
+      }
+    }
 
   }
 </script>

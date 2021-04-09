@@ -19,7 +19,6 @@ export default {
       type: 'warning'
     }).then(() => {
       cb();
-      return
     }).catch(() => {
       that.$message({
         type: 'info',
@@ -43,13 +42,12 @@ export default {
   },
   // 统一请求提示语
   ["ROOT_AXIOS_TIP"]({ }, { res, that, cb }) {
-    if (res.code == 200) { that.$message.success(res.msg); cb(); }
+    if (res.code === 200) { that.$message.success(res.msg); cb(); }
     else { that.$message.error(res.msg); }
   },
   ["ROOT_GET_MENU"]({ state, commit }, { that, cb }) {
     that.api.get("/user/getUserByAccount").then((res) => {
-      console.log(res)
-      if (res.code == 200) { cb(res); }
+      if (res.code === 200) { cb(res); }
       else { that.$message.error(res.msg); }
     })
   },
@@ -58,7 +56,7 @@ export default {
     dispatch("ROOT_CONFIRM", {
       that, msg: '确定登出系统？', cb: () => {
         that.api.post("/login/loginOut").then((res) => {
-          if (res.code == 200) {
+          if (res.code === 200) {
             sessionStorage.removeItem("token");
             sessionStorage.removeItem("picUrl");
             sessionStorage.removeItem("viewList");
@@ -73,22 +71,12 @@ export default {
   },
   // 通用新增修改请求
   ["ROOT_ADD_OR_UPDATE"]({ state, dispatch }, { that, type, url, data, cb }) {
-    if (type == 'update') {
-      that.api.put('/' + url + '/update', data).then((res) => {
-        dispatch("ROOT_AXIOS_TIP", {
-          that, res, cb: () => {
-            cb(); state.dialogBottomShake = false;
-          }
-        })
+    that.api.put('/' + url + '/saveOrUpdate', data).then((res) => {
+      dispatch("ROOT_AXIOS_TIP", {
+        that, res, cb: () => {
+          cb(); state.dialogBottomShake = false;
+        }
       })
-    } else {
-      that.api.post('/' + url + '/create', data).then((res) => {
-        dispatch("ROOT_AXIOS_TIP", {
-          that, res, cb: () => {
-            cb(); state.dialogBottomShake = false;
-          }
-        })
-      })
-    }
+    })
   }
 }

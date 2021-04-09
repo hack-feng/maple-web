@@ -1,10 +1,7 @@
 <template>
   <div>
-    <UserSearch/>
-    <UserTable
-      ref="TableArea"
-      @getTableList="getTableList">
-    </UserTable>
+    <UserSearch @getTableList="getTableList"/>
+    <UserTable  ref="TableArea" @getTableList="getTableList" @deleteEvent="deleteEvent"/>
     <UserEdit ref="UserEdit" @addOrUpdateEvent="addOrUpdateEvent"/>
     <Pagination @getTableList="getTableList" :current="userState.current" :total="userState.total"/>
   </div>
@@ -28,6 +25,9 @@
     components: {
       UserEdit, UserSearch, UserTable, Pagination
     },
+    data() {
+      return {};
+    },
     created() {
       this.getTableList();
     },
@@ -44,7 +44,7 @@
       },
       // 新增或修改角色
       addOrUpdateEvent() {
-        this.$refs.DialogArea.$refs["form"].validate((valid) => {
+        this.$refs.UserEdit.$refs["form"].validate((valid) => {
           if (valid) {
             this.$store.dialogBottomShake = true;
             this.$store.dispatch("ROOT_ADD_OR_UPDATE", {
@@ -60,6 +60,26 @@
             });
           }
         })
+      },
+      // 删除用户
+      deleteEvent(id) {
+        id = id[0];
+        this.$store.dispatch("ROOT_CONFIRM", {
+          that: this,
+          msg: '删除后将无法恢复',
+          cb: () => {
+            this.api.post("/user/deleteById/"+id).then(res => {
+              if (res.code === 200) {
+                this.getTableList();
+                this.userState.selectList = [];
+                this.$message.success(res.msg);
+              }else{
+                this.$message.error(res.msg)
+              }
+            });
+          },
+          hint: `确认要删除该账号吗？`,
+        });
       },
     }
   }

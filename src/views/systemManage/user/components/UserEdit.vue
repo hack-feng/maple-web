@@ -1,7 +1,7 @@
 <template>
   <div class="listTemplateDialog">
     <el-dialog
-      :title="userState.dialogType | dialogTypeChange(userState.activeName)"
+      :title="userState.dialogType"
       :visible.sync="userState.dialogShow"
       :close-on-click-modal="false"
       width="568px"
@@ -103,6 +103,25 @@
       //清除表单内容
       _close() {
         this.$refs["form"].resetFields();
+      },
+      close(){
+        if(this.userState.dialogType==="add") {
+          return this.userState.dialogShow = false;
+        }
+        let oldData = JSON.stringify(this.dialogData);
+        let newData = JSON.stringify(this.userState.dialogData);
+        if(oldData!==newData){
+          this.$confirm('检测到您修改了内容，确定离开?', '提示信息', {
+            distinguishCancelAndClose: true,
+            confirmButtonText: '确定',
+            cancelButtonText: '取消'
+          }).then(() => {this.userState.dialogShow = false}).catch(()=>{})
+        }else{
+          this.userState.dialogShow = false
+        }
+      },
+      addOrUpdate() {
+        this.$emit("addOrUpdateEvent");
       },
     },
   };

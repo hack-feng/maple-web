@@ -5,7 +5,7 @@ export default {
     dialogType: "add",
     dialogShow: false,
     searchForm: {
-      name: ""
+      account: ""
     },
     dialogData: {
       id: "",   // (integer, optional): 主键id ,
