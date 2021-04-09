@@ -1,16 +1,19 @@
 <template>
   <el-container>
-    <el-header class="flex">
+    <el-aside width="200px">
       <div>
-          <span class="systemName">
-            管理后台
-          </span>
+        <div class="systemName">
+          <span>管理后台</span>
+        </div>
+        <div class="navMenu">
+          <NavMenu></NavMenu>
+        </div>
       </div>
-    </el-header>
+    </el-aside>
     <el-container>
-      <el-aside width="200px">
-        <NavMenu></NavMenu>
-      </el-aside>
+      <el-header>
+        <NavBar></NavBar>
+      </el-header>
       <el-main class="main">
         <router-view></router-view> <!--路由出口 -->
       </el-main>
@@ -19,12 +22,13 @@
 </template>
 
 <script>
-  import NavMenu from "./base/NavMenu.vue";
+  import NavMenu from "./base/NavMenu";
+  import NavBar from "./base/NavBar";
 
   export default {
     name: "Manage",
     components: {
-      NavMenu
+      NavMenu, NavBar
     }
 
   }
@@ -39,7 +43,6 @@
 
   .el-header {
     padding: 0 0 0 0;
-    background-color: black;
     position: sticky;
     position: -webkit-sticky;
     top: 0;
@@ -57,6 +60,8 @@
 
   .systemName {
     color: #fff;
+    background-color: #000;
     font-size: 25px;
+    height: 60px;
   }
 </style>
