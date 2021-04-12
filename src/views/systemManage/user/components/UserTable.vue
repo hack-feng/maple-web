@@ -1,6 +1,7 @@
 <template>
   <el-table
     :data="userState.tableList"
+    border
     style="width: 100%">
     <el-table-column
       prop="account"
@@ -25,7 +26,7 @@
       label="创建时间">
       <template slot-scope="scope">
         <div>
-          {{plugins.changeDate(scope.row.createTime, "yymmddhhmmss")}}
+          {{plugins.changeDate(scope.row.createTime, "yymmddhhmm")}}
         </div>
       </template>
     </el-table-column>

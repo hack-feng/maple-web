@@ -64,7 +64,7 @@ export default {
       case 'yymmdd':
         result = year + '/' + month + '/' + day
         break
-      case 'yymmddhhmmss':
+      case 'yymmddhhmm':
         result =
           year +
           '/' +
@@ -74,9 +74,7 @@ export default {
           ' ' +
           hour +
           ':' +
-          minute +
-          ':' +
-          second
+          minute
         break
       case 'yymmddhhmmssSSS':
         result =

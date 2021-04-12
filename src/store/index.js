@@ -5,6 +5,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import User from './modules/systemManage/user'
+import Manage from "./modules/systemManage/Manage";
 import actions from "./actions"
 import getters from './getters'
 Vue.use(Vuex)
@@ -26,7 +27,7 @@ const store = new Vuex.Store({
   },
   getters,
   modules: {
-     User
+     User, Manage
   },
   actions
 })

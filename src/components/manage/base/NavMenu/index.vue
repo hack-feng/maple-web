@@ -1,20 +1,17 @@
 <template>
   <div>
-    <!--<el-radio-group v-model="isCollapse">-->
-      <!--<el-radio-button :label="false">展开</el-radio-button>-->
-      <!--<el-radio-button :label="true">收起</el-radio-button>-->
-    <!--</el-radio-group>-->
     <el-menu
       class="el-menu-vertical-demo"
-      @open="handleOpen"
-      @close="handleClose"
       background-color="#000"
       text-color="#fff"
       active-text-color="#ffd04b"
       default-active="1-4-1"
-      :collapse="isCollapse"
+      :collapse="manageState.isCollapse"
       router>
-
+      <el-menu-item class="backSystemName">
+        <i class="el-icon-menu"></i>
+        <span slot="title">管理后台</span>
+      </el-menu-item>
       <template v-for="item in navMenuData">
         <el-menu-item :index="item.index" v-if="!item.child">
           <i class="el-icon-menu"></i>
@@ -42,11 +39,12 @@
 </template>
 
 <script>
+  import {mapState} from "vuex";
+
   export default {
     data() {
       return {
         activeIndex: "home",
-        isCollapse: false,
         navMenuData: [
           {index: "home", name: "首页"},
           {index: "user", name: "用户"},
@@ -60,13 +58,14 @@
         ]
       };
     },
+    computed: {
+      ...mapState({
+        rootState: state => state,
+        manageState: state => state.Manage
+      })
+    },
     methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      }
+
     },
     mounted() {
       this.activeIndex = this.$route.path.substring(1, this.$route.path.length);
@@ -78,5 +77,10 @@
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
     min-height: 400px;
+  }
+  .backSystemName {
+    color: #fff;
+    background-color: #000;
+    font-size: 25px;
   }
 </style>

@@ -1,14 +1,7 @@
 <template>
   <el-container>
-    <el-aside width="200px">
-      <div>
-        <div class="systemName">
-          <span>管理后台</span>
-        </div>
-        <div class="navMenu">
-          <NavMenu></NavMenu>
-        </div>
-      </div>
+    <el-aside width="auto" style="background-color: #000">
+      <NavMenu></NavMenu>
     </el-aside>
     <el-container>
       <el-header>
@@ -56,12 +49,5 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .systemName {
-    color: #fff;
-    background-color: #000;
-    font-size: 25px;
-    height: 60px;
   }
 </style>

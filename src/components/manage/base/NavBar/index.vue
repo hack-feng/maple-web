@@ -1,16 +1,10 @@
 <template>
   <div class="nav-bar-container">
     <el-row :gutter="15">
-      <el-col :xs="4" :sm="12" :md="12" :lg="12" :xl="12">
-        <div class="left-panel">
-          <i
-            :class="collapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'"
-            :title="collapse ? '展开' : '收起'"
-            class="fold-unfold"
-            @click="handleCollapse"
-          ></i>
-        </div>
-      </el-col>
+        <el-radio-group v-model="manageState.isCollapse">
+          <el-radio-button :label="false">展开</el-radio-button>
+          <el-radio-button :label="true">收起</el-radio-button>
+        </el-radio-group>
       <el-col :xs="20" :sm="12" :md="12" :lg="12" :xl="12">
         <div class="right-panel">
           <!--  <vab-icon
@@ -25,7 +19,7 @@
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+import {mapState} from 'vuex'
 
   export default {
     name: 'NavBar',
@@ -35,13 +29,15 @@
       }
     },
     computed: {
-      ...mapGetters({
-      }),
+      ...mapState({
+        rootState: state => state,
+        manageState: state => state.Manage
+      })
     },
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
   .nav-bar-container {
     position: relative;
     height: $base-nav-bar-height;
