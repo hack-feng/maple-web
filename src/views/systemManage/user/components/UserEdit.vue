@@ -105,7 +105,7 @@
         this.$refs["form"].resetFields();
       },
       close(){
-        if(this.userState.dialogType==="add") {
+        if(this.userState.dialogType==="新增") {
           return this.userState.dialogShow = false;
         }
         let oldData = JSON.stringify(this.dialogData);

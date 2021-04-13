@@ -55,7 +55,7 @@
               cb: () => {
                 this.userState.dialogShow = false;
                 this.userState.selectList = [];
-                this.getTableList(this.userState.dialogType === "add" ? 1 : false);
+                this.getTableList(this.userState.dialogType === "新增" ? 1 : false);
               }
             });
           }

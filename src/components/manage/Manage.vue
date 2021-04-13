@@ -8,7 +8,9 @@
         <NavBar></NavBar>
       </el-header>
       <el-main class="main">
-        <router-view></router-view> <!--路由出口 -->
+        <div class="main-container">
+          <router-view></router-view> <!--路由出口 -->
+        </div>
       </el-main>
     </el-container>
   </el-container>
@@ -40,9 +42,16 @@
     position: -webkit-sticky;
     top: 0;
     z-index: 100;
+    border-radius:5px;
   }
   .main{
     padding: 20px 20px 20px 20px;
+    box-shadow: 1px 1px 4px #888888;
+  }
+  .main-container{
+    padding: 20px 20px 20px 20px;
+    background-color: #fff;
+    border-radius:5px;
   }
 
   .flex {

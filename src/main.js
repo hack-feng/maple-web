@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 
 // 引入element-ui
-import ElementUI from 'element-ui'
+import './plugins'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import {default as api} from './utils/api'
@@ -14,7 +14,6 @@ import plugins from "./utils/plugins";
 
 
 Vue.config.productionTip = false
-Vue.use(ElementUI)
 
 Vue.prototype.api = api;
 Vue.prototype.plugins = plugins

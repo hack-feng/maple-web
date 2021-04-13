@@ -5,13 +5,11 @@
     style="width: 100%">
     <el-table-column
       prop="account"
-      label="用户名"
-      width="180">
+      label="用户名">
     </el-table-column>
     <el-table-column
       prop="name"
-      label="姓名"
-      width="180">
+      label="姓名">
     </el-table-column>
     <el-table-column
       prop="nickName"
@@ -45,8 +43,8 @@
       </template>
       <template slot-scope="scope">
         <div style="display: flex;justify-content: space-around">
-          <span @click="updateEvent(scope.row)">编辑</span>
-          <span @click="$emit('deleteEvent', [scope.row.id])">删除</span>
+          <el-button type="text" @click="updateEvent(scope.row)">编辑</el-button>
+          <el-button type="text" @click="$emit('deleteEvent', [scope.row.id])">删除</el-button>
         </div>
       </template>
     </el-table-column>
