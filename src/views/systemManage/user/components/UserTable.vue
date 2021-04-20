@@ -44,7 +44,7 @@
       <template slot-scope="scope">
         <div style="display: flex;justify-content: space-around">
           <el-button type="text" @click="updateEvent(scope.row)">编辑</el-button>
-          <el-button type="text" @click="$emit('deleteEvent', [scope.row.id])">删除</el-button>
+          <el-button type="text" style="color:#f80000" @click="$emit('deleteEvent', [scope.row.id])">删除</el-button>
         </div>
       </template>
     </el-table-column>
@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     updateEvent(data) {
-      this.userState.dialogType = "修改";
+      this.userState.dialogType = "update";
       this.userState.dialogShow = true;
       this.userState.dialogData = this.plugins.deepFullCopy(data);
     },

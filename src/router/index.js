@@ -4,7 +4,8 @@ import Home from '@/views/blogManage/home/index'
 import Article from '@/views/blogManage/article/index'
 import Login from '@/components/manage/Login'
 import Manage from '@/components/manage/Manage'
-import User from '@/views/systemManage/user/index'
+import ManageUser from '@/views/systemManage/user'
+import ManageIndex from '@/views/systemManage/index'
 
 Vue.use(Router)
 
@@ -36,10 +37,26 @@ export default new Router({
       meta: {
         systemFlag: true
       }
+    },
+
+    {
+      path: '/manage/index',
+      name: 'ManageIndex',
+      component: ManageIndex,
+      meta: {
+        systemFlag: true
+      }
     }, {
-      path: '/user',
-      name: 'User',
-      component: User,
+      path: '/manage/user',
+      name: 'ManageUser',
+      component: ManageUser,
+      meta: {
+        systemFlag: true
+      }
+    }, {
+      path: '/manage/user/add',
+      name: 'Home',
+      component: Home,
       meta: {
         systemFlag: true
       }

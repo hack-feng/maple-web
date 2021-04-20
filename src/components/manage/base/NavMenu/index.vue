@@ -46,8 +46,8 @@
       return {
         activeIndex: "home",
         navMenuData: [
-          {index: "home", name: "首页"},
-          {index: "user", name: "用户"},
+          {index: "/manage/index", name: "首页"},
+          {index: "/manage/user", name: "用户"},
           {index: "novel", name: "小说"},
           {
             index: "2",

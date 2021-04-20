@@ -4,9 +4,6 @@
       <el-button icon="el-icon-plus" type="primary" @click="addEvent">
         添加
       </el-button>
-      <el-button icon="el-icon-delete" type="danger" @click="handleDelete">
-        批量删除
-      </el-button>
     </div>
     <div class="listTemplateSearch">
       <el-form ref="userForm" :inline="true" :model="userState.searchForm" label-width="80px">
@@ -32,12 +29,12 @@
     },
     methods: {
       addEvent(){
-        this.userState.dialogType = '新增';
+        this.userState.dialogType = 'add';
         this.userState.dialogShow = true;
         this.plugins.resetObjectValue(this.userState.dialogData);
       },
       resetSearchForm(){
-        this.userState.searchForm.name = "";
+        this.userState.searchForm.account = "";
         this.$emit('getTableList', 1)
       }
     }
